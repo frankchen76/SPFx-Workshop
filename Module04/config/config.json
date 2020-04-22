@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "module-04-demo-1-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/module04Demo1/Module04Demo1WebPart.js",
+          "manifest": "./src/webparts/module04Demo1/Module04Demo1WebPart.manifest.json"
+        }
+      ]
+    },
+    "module-04-demo-2-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/module04Demo2/Module04Demo2WebPart.js",
+          "manifest": "./src/webparts/module04Demo2/Module04Demo2WebPart.manifest.json"
+        }
+      ]
+    },
+    "module-04-demo-3-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/module04Demo3/Module04Demo3WebPart.js",
+          "manifest": "./src/webparts/module04Demo3/Module04Demo3WebPart.manifest.json"
+        }
+      ]
+    },
+    "module-04-demo-4-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/module04Demo4/Module04Demo4WebPart.js",
+          "manifest": "./src/webparts/module04Demo4/Module04Demo4WebPart.manifest.json"
+        }
+      ]
+    },
+    "module-04-publisher-demo-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/module04PublisherDemo/Module04PublisherDemoWebPart.js",
+          "manifest": "./src/webparts/module04PublisherDemo/Module04PublisherDemoWebPart.manifest.json"
+        }
+      ]
+    },
+    "module-04-subscriber-demo-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/module04SubscriberDemo/Module04SubscriberDemoWebPart.js",
+          "manifest": "./src/webparts/module04SubscriberDemo/Module04SubscriberDemoWebPart.manifest.json"
+        }
+      ]
+    },
+    "module-04-demo-7-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/module04Demo7/Module04Demo7WebPart.js",
+          "manifest": "./src/webparts/module04Demo7/Module04Demo7WebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "Module04Demo1WebPartStrings": "lib/webparts/module04Demo1/loc/{locale}.js",
+    "Module04Demo2WebPartStrings": "lib/webparts/module04Demo2/loc/{locale}.js",
+    "Module04Demo3WebPartStrings": "lib/webparts/module04Demo3/loc/{locale}.js",
+    "Module04Demo4WebPartStrings": "lib/webparts/module04Demo4/loc/{locale}.js",
+    "Module04PublisherDemoWebPartStrings": "lib/webparts/module04PublisherDemo/loc/{locale}.js",
+    "Module04SubscriberDemoWebPartStrings": "lib/webparts/module04SubscriberDemo/loc/{locale}.js",
+    "Module04Demo7WebPartStrings": "lib/webparts/module04Demo7/loc/{locale}.js"
+  }
+}
