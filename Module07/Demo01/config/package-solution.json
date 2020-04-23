@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "Module07Demo",
+    "id": "6d724b6d-14f3-4aa6-8de9-e8913f837612",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false,
+    "features": [
+      {
+        "title": "Module07Demo Feature",
+        "description": "this is Module07Demo Feature",
+        "id": "cd8413ba-297d-44f4-9156-bcf9027b5b00", // <-- Update 'id' with a new GUID
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml" //,
+            // "elements-v2.xml"
+          ],
+          "elementFiles": [
+            "schema.xml"
+          ] //,
+          // "upgradeActions": [
+          //   "upgrade-actions-v2.xml"
+          // ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/module-07-demo.sppkg"
+  }
+}

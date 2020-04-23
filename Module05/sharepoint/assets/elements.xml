@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="Module05AppCustomizer"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="383462fd-7056-4ca0-bddf-4c561c1e7adf"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+    <CustomAction
+        Title="Module05CommandSet"
+        RegistrationId="100"
+        RegistrationType="List"
+        Location="ClientSideExtension.ListViewCommandSet"
+        ClientSideComponentId="f92f1be5-7a5a-4998-a5e3-1017223e24ab"
+        ClientSideComponentProperties="{&quot;sampleTextOne&quot;: &quot;One item is selected in the list&quot;,&quot;sampleTextTwo&quot;: &quot;This command is always visible.&quot;}">
+    </CustomAction>
+    <CustomAction
+        Title="Module05CommandSet"
+        RegistrationId="101"
+        RegistrationType="List"
+        Location="ClientSideExtension.ListViewCommandSet"
+        ClientSideComponentId="f92f1be5-7a5a-4998-a5e3-1017223e24ab"
+        ClientSideComponentProperties="{&quot;sampleTextOne&quot;: &quot;One item is selected in the list&quot;,&quot;sampleTextTwo&quot;: &quot;This command is always visible.&quot;}">
+    </CustomAction>
+    <Field ID="{060E50AC-E9C1-3D3C-B1F9-DE0BCAC200F6}"
+        Name="SPFxPercentage"
+        DisplayName="Percentage"
+        Type="Number"
+        Min="0"
+        Required="FALSE"
+        Group="SPFx Columns"
+        ClientSideComponentId="1df22a1f-43ac-4dc8-90c0-1ffaf0180586">
+      </Field>
+    </Elements>

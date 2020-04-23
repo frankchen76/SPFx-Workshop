@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "Module05Demo",
+    "id": "3b7af9e7-013f-4922-a70a-054a150231a8",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false,
+    "features": [
+      {
+        "title": "Module05Demo Extensions.",
+        "description": "Deploys Module05Demo Extensions",
+        "id": "d425e8c1-805e-4e2d-b190-d94540600dfa",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml",
+            "ClientSideInstance.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/module-05-demo-1.sppkg"
+  }
+}

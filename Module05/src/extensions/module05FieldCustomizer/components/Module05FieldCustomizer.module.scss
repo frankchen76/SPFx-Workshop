@@ -1,0 +1,11 @@
+.Module05FieldCustomizer {
+  .cell {
+    background-color: "[theme:themePrimary, default:#e5e5e5]";
+    display: 'inline-block';
+  }
+
+  .full {
+    background-color: #e5e5e5;
+    width: 100px;
+  }
+}

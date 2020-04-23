@@ -42,3 +42,29 @@ A set of SPFx solution to showcase SPFx Web part development.
 
 ### module04Demo7:
 * create a SPFx web part using no javascript framework
+
+## Module05
+A set of SPFx solutions to showcase SPFx extensions. 
+
+### module05Demo1
+* showcase page placeholder
+
+### module05Demo2
+* showcase commandset
+
+### module05Demo3
+* showcase field customizer
+
+## Module07
+this sample showcase artifact provisioning
+
+## Module08
+ his sample showcase the Team SPFx
+
+## Module10
+showcase the gulp and webpack customization
+* gulp task to deploy .sppkg to app catalog directly
+* webpack to load markdown file. 
+
+## Module11
+showcase Azure CDN deployment

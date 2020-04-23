@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "module-05-app-customizer-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/module05AppCustomizer/Module05AppCustomizerApplicationCustomizer.js",
+          "manifest": "./src/extensions/module05AppCustomizer/Module05AppCustomizerApplicationCustomizer.manifest.json"
+        }
+      ]
+    },
+    "module-05-command-set-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/module05CommandSet/Module05CommandSetCommandSet.js",
+          "manifest": "./src/extensions/module05CommandSet/Module05CommandSetCommandSet.manifest.json"
+        }
+      ]
+    },
+    "module-05-field-customizer-field-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/module05FieldCustomizer/Module05FieldCustomizerFieldCustomizer.js",
+          "manifest": "./src/extensions/module05FieldCustomizer/Module05FieldCustomizerFieldCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "Module05AppCustomizerApplicationCustomizerStrings": "lib/extensions/module05AppCustomizer/loc/{locale}.js",
+    "Module05CommandSetCommandSetStrings": "lib/extensions/module05CommandSet/loc/{locale}.js",
+    "Module05FieldCustomizerFieldCustomizerStrings": "lib/extensions/module05FieldCustomizer/loc/{locale}.js"
+  }
+}
