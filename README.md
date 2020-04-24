@@ -59,7 +59,7 @@ A set of SPFx solutions to showcase SPFx extensions.
 this sample showcase artifact provisioning
 
 ## Module08
- his sample showcase the Team SPFx
+this sample showcase the Team SPFx
 
 ## Module10
 showcase the gulp and webpack customization
@@ -68,3 +68,17 @@ showcase the gulp and webpack customization
 
 ## Module11
 showcase Azure CDN deployment
+
+## Module15
+
+### Module15Demo1
+regular MS Graph API demo
+
+### Module15Demo2
+domain isolation demo
+
+## Module16
+this sample showcase the custom API
+
+### Module16Demo1
+showcase the custom API

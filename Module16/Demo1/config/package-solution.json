@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "module-16-demo-1-client-side-solution",
+    "id": "1299674d-55ae-4344-9cf5-9a2e2d487d26",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false,
+    "webApiPermissionRequests": [
+      {
+        "resource": "https://M365x725618.onmicrosoft.com/TestDotNetCore.WebAPI",
+        "scope": "user_impersonation"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/module-16-demo-1.sppkg"
+  }
+}
