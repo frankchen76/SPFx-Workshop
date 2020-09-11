@@ -4,7 +4,7 @@ import { MyTimer } from "./MyTimer";
 
 
 export class Main extends React.Component<{}, {}> {
-    private testOnClickHandler(val?: string) {
+    private test1OnClickHandler(val?: string) {
         alert(val);
         let a = {
             id: 1,
@@ -14,12 +14,16 @@ export class Main extends React.Component<{}, {}> {
             console.log(key);
         }
     }
+    private test2OnClickHandler = (): void => {
+        console.log("test2OnClickHandler.");
+    }
     render() {
         return (
             <div>
                 <Hello compiler="TypeScript" framework="React" />
                 <MyTimer label="Current time:" />
-                <button onClick={this.testOnClickHandler.bind(this, "Test")}>Test</button>
+                <button onClick={this.test1OnClickHandler.bind(this, "Test")}>Test1</button>
+                <button onClick={this.test2OnClickHandler}>Test2</button>
             </div>
         );
     }
