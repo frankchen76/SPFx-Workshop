@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { override } from '@microsoft/decorators';
-import { Log } from '@microsoft/sp-core-library';
+import { Log, SPEventArgs } from '@microsoft/sp-core-library';
 import {
   BaseApplicationCustomizer, PlaceholderContent, PlaceholderName
 } from '@microsoft/sp-application-base';
@@ -42,6 +42,9 @@ export default class Module05AppCustomizerApplicationCustomizer
 
     //Dialog.alert(`Hello from ${strings.Title}:\n\n${message}`);
     this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceHolders);
+    this.context.application.navigatedEvent.add(this, (args: SPEventArgs) => {
+      console.log(`navigatedEvent was called. ${args}`);
+    });
 
     return Promise.resolve();
   }

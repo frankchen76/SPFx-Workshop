@@ -1,21 +1,19 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "Module05Demo",
-    "id": "3b7af9e7-013f-4922-a70a-054a150231a8",
+    "name": "module-05-demo-1-client-side-solution",
+    "id": "da3f4a9e-f5fb-484b-80ed-8470f6983328",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
-    "isDomainIsolated": false,
     "features": [
       {
-        "title": "Module05Demo Extensions.",
-        "description": "Deploys Module05Demo Extensions",
-        "id": "d425e8c1-805e-4e2d-b190-d94540600dfa",
+        "title": "Application Extension - Deployment of custom action.",
+        "description": "Deploys a custom action with ClientSideComponentId association",
+        "id": "a5fbe075-ce2c-4c6c-a7a0-e4334f9c5e80",
         "version": "1.0.0.0",
         "assets": {
           "elementManifests": [
-            "elements.xml",
-            "ClientSideInstance.xml"
+            "elements.xml"
           ]
         }
       }

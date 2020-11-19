@@ -1,0 +1,141 @@
+{
+  "title": "Upgrade project Module04 to v1.11.0",
+  "steps": [
+    {
+      "file": "./package.json",
+      "description": "### REQUIRED\r\n\r\nUpgrade SharePoint Framework dependency package @microsoft/sp-core-library\r\n\r\nExecute the following command:\r\n\r\n[`npm i -SE @microsoft/sp-core-library@1.11.0`](command:codetour.sendTextToTerminal?[\"npm i -SE @microsoft/sp-core-library@1.11.0\"])",
+      "line": 15
+    },
+    {
+      "file": "./package.json",
+      "title": "REQUIRED: @microsoft/sp-lodash-subset",
+      "description": "### REQUIRED\r\n\r\nUpgrade SharePoint Framework dependency package @microsoft/sp-lodash-subset\r\n\r\nExecute the following command:\r\n\r\n[`npm i -SE @microsoft/sp-lodash-subset@1.11.0`](command:codetour.sendTextToTerminal?[\"npm i -SE @microsoft/sp-lodash-subset@1.11.0\"])",
+      "line": 16
+    },
+    {
+      "file": "./package.json",
+      "title": "REQUIRED: @microsoft/sp-office-ui-fabric-core",
+      "description": "### REQUIRED\r\n\r\nUpgrade SharePoint Framework dependency package @microsoft/sp-office-ui-fabric-core\r\n\r\nExecute the following command:\r\n\r\n[`npm i -SE @microsoft/sp-office-ui-fabric-core@1.11.0`](command:codetour.sendTextToTerminal?[\"npm i -SE @microsoft/sp-office-ui-fabric-core@1.11.0\"])",
+      "line": 17
+    },
+    {
+      "file": "./package.json",
+      "title": "REQUIRED: @microsoft/sp-webpart-base",
+      "description": "### REQUIRED\r\n\r\nUpgrade SharePoint Framework dependency package @microsoft/sp-webpart-base\r\n\r\nExecute the following command:\r\n\r\n[`npm i -SE @microsoft/sp-webpart-base@1.11.0`](command:codetour.sendTextToTerminal?[\"npm i -SE @microsoft/sp-webpart-base@1.11.0\"])",
+      "line": 19
+    },
+    {
+      "file": "./package.json",
+      "title": "REQUIRED: @types/react",
+      "description": "### REQUIRED\r\n\r\nRemove SharePoint Framework dependency package @types/react\r\n\r\nExecute the following command:\r\n\r\n[`npm un -S @types/react`](command:codetour.sendTextToTerminal?[\"npm un -S @types/react\"])",
+      "line": 23
+    },
+    {
+      "file": "./package.json",
+      "title": "REQUIRED: @types/react-dom",
+      "description": "### REQUIRED\r\n\r\nRemove SharePoint Framework dependency package @types/react-dom\r\n\r\nExecute the following command:\r\n\r\n[`npm un -S @types/react-dom`](command:codetour.sendTextToTerminal?[\"npm un -S @types/react-dom\"])",
+      "line": 24
+    },
+    {
+      "file": "./package.json",
+      "title": "REQUIRED: @types/webpack-env",
+      "description": "### REQUIRED\r\n\r\nRemove SharePoint Framework dependency package @types/webpack-env\r\n\r\nExecute the following command:\r\n\r\n[`npm un -S @types/webpack-env`](command:codetour.sendTextToTerminal?[\"npm un -S @types/webpack-env\"])",
+      "line": 25
+    },
+    {
+      "file": "./package.json",
+      "title": "REQUIRED: @types/es6-promise",
+      "description": "### REQUIRED\r\n\r\nRemove SharePoint Framework dependency package @types/es6-promise\r\n\r\nExecute the following command:\r\n\r\n[`npm un -S @types/es6-promise`](command:codetour.sendTextToTerminal?[\"npm un -S @types/es6-promise\"])",
+      "line": 22
+    },
+    {
+      "file": "./package.json",
+      "title": "REQUIRED: @microsoft/sp-property-pane",
+      "description": "### REQUIRED\r\n\r\nUpgrade SharePoint Framework dependency package @microsoft/sp-property-pane\r\n\r\nExecute the following command:\r\n\r\n[`npm i -SE @microsoft/sp-property-pane@1.11.0`](command:codetour.sendTextToTerminal?[\"npm i -SE @microsoft/sp-property-pane@1.11.0\"])",
+      "line": 18
+    },
+    {
+      "file": "./package.json",
+      "title": "REQUIRED: office-ui-fabric-react",
+      "description": "### REQUIRED\r\n\r\nUpgrade SharePoint Framework dependency package office-ui-fabric-react\r\n\r\nExecute the following command:\r\n\r\n[`npm i -SE office-ui-fabric-react@6.214.0`](command:codetour.sendTextToTerminal?[\"npm i -SE office-ui-fabric-react@6.214.0\"])",
+      "line": 26
+    },
+    {
+      "file": "./package.json",
+      "title": "REQUIRED: @microsoft/sp-build-web",
+      "description": "### REQUIRED\r\n\r\nUpgrade SharePoint Framework dev dependency package @microsoft/sp-build-web\r\n\r\nExecute the following command:\r\n\r\n[`npm i -DE @microsoft/sp-build-web@1.11.0`](command:codetour.sendTextToTerminal?[\"npm i -DE @microsoft/sp-build-web@1.11.0\"])",
+      "line": 34
+    },
+    {
+      "file": "./package.json",
+      "title": "REQUIRED: @microsoft/sp-module-interfaces",
+      "description": "### REQUIRED\r\n\r\nUpgrade SharePoint Framework dev dependency package @microsoft/sp-module-interfaces\r\n\r\nExecute the following command:\r\n\r\n[`npm i -DE @microsoft/sp-module-interfaces@1.11.0`](command:codetour.sendTextToTerminal?[\"npm i -DE @microsoft/sp-module-interfaces@1.11.0\"])",
+      "line": 36
+    },
+    {
+      "file": "./package.json",
+      "title": "REQUIRED: @microsoft/sp-webpart-workbench",
+      "description": "### REQUIRED\r\n\r\nUpgrade SharePoint Framework dev dependency package @microsoft/sp-webpart-workbench\r\n\r\nExecute the following command:\r\n\r\n[`npm i -DE @microsoft/sp-webpart-workbench@1.11.0`](command:codetour.sendTextToTerminal?[\"npm i -DE @microsoft/sp-webpart-workbench@1.11.0\"])",
+      "line": 37
+    },
+    {
+      "file": "./package.json",
+      "title": "REQUIRED: @microsoft/sp-tslint-rules",
+      "description": "### REQUIRED\r\n\r\nUpgrade SharePoint Framework dev dependency package @microsoft/sp-tslint-rules\r\n\r\nExecute the following command:\r\n\r\n[`npm i -DE @microsoft/sp-tslint-rules@1.11.0`](command:codetour.sendTextToTerminal?[\"npm i -DE @microsoft/sp-tslint-rules@1.11.0\"])",
+      "line": 35
+    },
+    {
+      "file": "./package.json",
+      "title": "REQUIRED: @types/webpack-env",
+      "description": "### REQUIRED\r\n\r\nInstall SharePoint Framework dev dependency package @types/webpack-env\r\n\r\nExecute the following command:\r\n\r\n[`npm i -DE @types/webpack-env@1.13.1`](command:codetour.sendTextToTerminal?[\"npm i -DE @types/webpack-env@1.13.1\"])",
+      "line": 25
+    },
+    {
+      "file": "./package.json",
+      "title": "REQUIRED: @types/es6-promise",
+      "description": "### REQUIRED\r\n\r\nInstall SharePoint Framework dev dependency package @types/es6-promise\r\n\r\nExecute the following command:\r\n\r\n[`npm i -DE @types/es6-promise@0.0.33`](command:codetour.sendTextToTerminal?[\"npm i -DE @types/es6-promise@0.0.33\"])",
+      "line": 22
+    },
+    {
+      "file": "./package.json",
+      "title": "REQUIRED: @types/react",
+      "description": "### REQUIRED\r\n\r\nInstall SharePoint Framework dev dependency package @types/react\r\n\r\nExecute the following command:\r\n\r\n[`npm i -DE @types/react@16.8.8`](command:codetour.sendTextToTerminal?[\"npm i -DE @types/react@16.8.8\"])",
+      "line": 23
+    },
+    {
+      "file": "./package.json",
+      "title": "REQUIRED: @types/react-dom",
+      "description": "### REQUIRED\r\n\r\nInstall SharePoint Framework dev dependency package @types/react-dom\r\n\r\nExecute the following command:\r\n\r\n[`npm i -DE @types/react-dom@16.8.3`](command:codetour.sendTextToTerminal?[\"npm i -DE @types/react-dom@16.8.3\"])",
+      "line": 24
+    },
+    {
+      "file": "./config/package-solution.json",
+      "title": "OPTIONAL: package-solution.json developer",
+      "description": "### OPTIONAL\r\n\r\nIn package-solution.json add developer section\r\n\r\n\r\n```json\r\n{\n  \"solution\": {\n    \"developer\": {\n      \"name\": \"Contoso\",\n      \"privacyUrl\": \"https://contoso.com/privacy\",\n      \"termsOfUseUrl\": \"https://contoso.com/terms-of-use\",\n      \"websiteUrl\": \"https://contoso.com/my-app\",\n      \"mpnId\": \"000000\"\n    }\n  }\n}\r\n```",
+      "line": 1
+    },
+    {
+      "file": "./.yo-rc.json",
+      "title": "RECOMMENDED: .yo-rc.json version",
+      "description": "### RECOMMENDED\r\n\r\nUpdate version in .yo-rc.json\r\n\r\n\r\n```json\r\n{\n  \"@microsoft/generator-sharepoint\": {\n    \"version\": \"1.11.0\"\n  }\n}\r\n```",
+      "line": 1
+    },
+    {
+      "file": "./tsconfig.json",
+      "title": "REQUIRED: tsconfig.json include property",
+      "description": "### REQUIRED\r\n\r\nUpdate tsconfig.json include property\r\n\r\n\r\n```json\r\n{\n  \"include\": [\n    \"src/**/*.tsx\"\n  ]\n}\r\n```",
+      "line": 1
+    },
+    {
+      "file": "./package.json",
+      "title": "OPTIONAL: Run npm dedupe",
+      "description": "### OPTIONAL\r\n\r\nIf, after upgrading npm packages, when building the project you have errors similar to: \"error TS2345: Argument of type 'SPHttpClientConfiguration' is not assignable to parameter of type 'SPHttpClientConfiguration'\", try running 'npm dedupe' to cleanup npm packages.\r\n\r\nExecute the following command:\r\n\r\n[`npm dedupe`](command:codetour.sendTextToTerminal?[\"npm dedupe\"])",
+      "line": 1
+    },
+    {
+      "file": "./.tours/upgrade.tour",
+      "title": "RECOMMENDED: Delete tour",
+      "description": "### THAT'S IT!!!\r\nOnce you have tested that your upgrade is successful, you can delete the `.tour` folder and its contents. Otherwise, you'll be prompted to launch this CodeTour every time you open this project."
+    }
+  ]
+}
