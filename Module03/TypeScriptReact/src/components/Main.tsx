@@ -1,9 +1,18 @@
 import * as React from "react";
 import { Hello } from "./Hello";
 import { MyTimer } from "./MyTimer";
+import { MyTimerFunc } from "./MyTimerFunc";
 
-
-export class Main extends React.Component<{}, {}> {
+interface IMainState {
+    label: string;
+}
+export class Main extends React.Component<{}, IMainState> {
+    constructor(props: {}) {
+        super(props);
+        this.state = {
+            label: "Original"
+        };
+    }
     private test1OnClickHandler(val?: string) {
         alert(val);
         let a = {
@@ -15,13 +24,15 @@ export class Main extends React.Component<{}, {}> {
         }
     }
     private test2OnClickHandler = (): void => {
-        console.log("test2OnClickHandler.");
+        this.setState({ label: "New" });
+        console.log("updated label.");
     }
     render() {
         return (
             <div>
                 <Hello compiler="TypeScript" framework="React" />
                 <MyTimer label="Current time:" />
+                <MyTimerFunc label={this.state.label} />
                 <button onClick={this.test1OnClickHandler.bind(this, "Test")}>Test1</button>
                 <button onClick={this.test2OnClickHandler}>Test2</button>
             </div>
