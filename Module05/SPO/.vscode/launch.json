@@ -5,6 +5,27 @@
    */
   "version": "0.2.0",
   "configurations": [{
+      "name": "Launch Edge",
+      "request": "launch",
+      "type": "edge",
+      // "version": "canary",
+      "url": "https://m365x725618.sharepoint.com/sites/SPFxWorkshop-Dev?debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&loadSPFX=true&customActions=%7B%22383462fd-7056-4ca0-bddf-4c561c1e7adf%22%3A%7B%22location%22%3A%22ClientSideExtension.ApplicationCustomizer%22%2C%22properties%22%3A%7B%22testMessage%22%3A%22Test+message%22%7D%7D%7D",
+      "webRoot": "${workspaceRoot}",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///.././src/*": "${webRoot}/src/*",
+        "webpack:///../../../src/*": "${webRoot}/src/*",
+        "webpack:///../../../../src/*": "${webRoot}/src/*",
+        "webpack:///../../../../../src/*": "${webRoot}/src/*"
+      },
+      "userDataDir": "C:\\Users\\tachen\\AppData\\Local\\Microsoft\\Edge\\User Data",
+      "runtimeArgs": [
+        "--remote-debugging-port=2015",
+        "--harmony",
+        "--profile-directory=Profile 4"
+      ]
+    },
+    {
       "name": "Local workbench",
       "type": "chrome",
       "request": "launch",
@@ -25,7 +46,7 @@
       "name": "Hosted workbench",
       "type": "chrome",
       "request": "launch",
-      "url": "https://enter-your-SharePoint-site/_layouts/workbench.aspx",
+      "url": "https://m365x725618.sharepoint.com/sites/SPFxWorkshop-Dev?debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&loadSPFX=true&customActions=%7B%22383462fd-7056-4ca0-bddf-4c561c1e7adf%22%3A%7B%22location%22%3A%22ClientSideExtension.ApplicationCustomizer%22%2C%22properties%22%3A%7B%22testMessage%22%3A%22Test+message%22%7D%7D%7D",
       "webRoot": "${workspaceRoot}",
       "sourceMaps": true,
       "sourceMapPathOverrides": {
@@ -34,9 +55,31 @@
         "webpack:///../../../../src/*": "${webRoot}/src/*",
         "webpack:///../../../../../src/*": "${webRoot}/src/*"
       },
+      "userDataDir": "C:\\Users\\tachen\\AppData\\Local\\Google\\Chrome\\User Data",
       "runtimeArgs": [
         "--remote-debugging-port=9222",
-        "-incognito"
+        "--harmony",
+        "--profile-directory=Profile 1"
+      ]
+    },
+    {
+      "name": "TestCommunication3",
+      "type": "chrome",
+      "request": "launch",
+      "url": "https://m365x725618.sharepoint.com/sites/TestCommunication3?debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&loadSPFX=true&customActions=%7B%22383462fd-7056-4ca0-bddf-4c561c1e7adf%22%3A%7B%22location%22%3A%22ClientSideExtension.ApplicationCustomizer%22%2C%22properties%22%3A%7B%22testMessage%22%3A%22Test+message%22%7D%7D%7D",
+      "webRoot": "${workspaceRoot}",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///.././src/*": "${webRoot}/src/*",
+        "webpack:///../../../src/*": "${webRoot}/src/*",
+        "webpack:///../../../../src/*": "${webRoot}/src/*",
+        "webpack:///../../../../../src/*": "${webRoot}/src/*"
+      },
+      "userDataDir": "C:\\Users\\tachen\\AppData\\Local\\Google\\Chrome\\User Data",
+      "runtimeArgs": [
+        "--remote-debugging-port=9222",
+        "--harmony",
+        "--profile-directory=Profile 1"
       ]
     }
   ]

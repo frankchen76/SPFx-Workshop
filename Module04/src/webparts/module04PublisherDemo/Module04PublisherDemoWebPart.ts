@@ -15,7 +15,6 @@ import {
 import * as strings from 'Module04PublisherDemoWebPartStrings';
 import Module04PublisherDemo from './components/Module04PublisherDemo';
 import { IModule04PublisherDemoProps } from './components/IModule04PublisherDemoProps';
-import { autobind } from 'office-ui-fabric-react';
 
 export interface IModule04PublisherDemoWebPartProps {
   description: string;
@@ -45,8 +44,7 @@ export default class Module04PublisherDemoWebPart
     }
   }
 
-  @autobind
-  public _locationChanged(location: string) {
+  public _locationChanged = (location: string) => {
     this._location = location;
     this.context.dynamicDataSourceManager.notifyPropertyChanged("location");
   }

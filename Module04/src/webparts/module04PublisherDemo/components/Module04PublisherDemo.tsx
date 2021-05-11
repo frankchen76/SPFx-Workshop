@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from './Module04PublisherDemo.module.scss';
 import { IModule04PublisherDemoProps } from './IModule04PublisherDemoProps';
 import { escape } from '@microsoft/sp-lodash-subset';
-import { ChoiceGroup, autobind, IChoiceGroupOption } from 'office-ui-fabric-react';
+import { ChoiceGroup, IChoiceGroupOption } from 'office-ui-fabric-react';
 import { IModule04PublisherDemoState } from './IModule04PublisherDemoState';
 
 export default class Module04PublisherDemo extends React.Component<IModule04PublisherDemoProps, IModule04PublisherDemoState> {
@@ -13,8 +13,7 @@ export default class Module04PublisherDemo extends React.Component<IModule04Publ
     };
   }
 
-  @autobind
-  private _onOptionChanged(target: any, option: IChoiceGroupOption) {
+  private _onOptionChanged = (target: any, option: IChoiceGroupOption) => {
     this.setState({
       location: option.text
     });

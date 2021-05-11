@@ -3,7 +3,7 @@ import styles from './Module04Demo3.module.scss';
 import { IModule04Demo3Props } from './IModule04Demo3Props';
 import { escape } from '@microsoft/sp-lodash-subset';
 import { IModule04Demo3State } from './IModule04Demo3State';
-import { PrimaryButton, Stack, autobind, Spinner } from 'office-ui-fabric-react';
+import { PrimaryButton, Stack, Spinner } from 'office-ui-fabric-react';
 
 export default class Module04Demo3 extends React.Component<IModule04Demo3Props, IModule04Demo3State> {
   constructor(props: IModule04Demo3Props) {
@@ -14,8 +14,7 @@ export default class Module04Demo3 extends React.Component<IModule04Demo3Props, 
     };
   }
 
-  @autobind
-  private async _pnpjsTestHandler(): Promise<void> {
+  private _pnpjsTestHandler = async (): Promise<void> => {
     try {
       this.setState({
         loading: true
@@ -32,8 +31,7 @@ export default class Module04Demo3 extends React.Component<IModule04Demo3Props, 
       });
     }
   }
-  @autobind
-  private async _spoRestApiTestHandler(): Promise<void> {
+  private _spoRestApiTestHandler = async (): Promise<void> => {
     try {
       this.setState({
         loading: true

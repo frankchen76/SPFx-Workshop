@@ -14,6 +14,7 @@ import {
 export interface IModule04Demo1WebPartProps {
   description: string;
   title: string;
+  timerLabel: string;
   listUrl: string;
 }
 
@@ -23,7 +24,8 @@ export default class Module04Demo1WebPart extends BaseClientSideWebPart<IModule0
       Module04Demo1,
       {
         description: this.properties.description,
-        title: this.properties.title
+        title: this.properties.title,
+        timerLabel: this.properties.timerLabel
       }
     );
     ReactDom.render(element, this.domElement);
@@ -53,6 +55,9 @@ export default class Module04Demo1WebPart extends BaseClientSideWebPart<IModule0
                 }),
                 PropertyPaneTextField('title', {
                   label: 'Title'
+                }),
+                PropertyPaneTextField('timerLabel', {
+                  label: 'Timer Label'
                 })
 
               ]

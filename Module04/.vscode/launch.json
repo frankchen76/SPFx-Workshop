@@ -34,11 +34,11 @@
         "webpack:///../../../../src/*": "${webRoot}/src/*",
         "webpack:///../../../../../src/*": "${webRoot}/src/*"
       },
+      "userDataDir": "C:\\Users\\tachen\\AppData\\Local\\Google\\Chrome\\User Data",
       "runtimeArgs": [
         "--remote-debugging-port=9222",
         "--harmony",
-        "--incognito",
-        "--load-extension=${env:userprofile}/AppData/Local/Google/Chrome/User Data/Default/Extensions/hdokiejnpimakedhajhdlcegeplioahd/4.46.0.1_0"
+        "--profile-directory=Profile 1"
       ]
     }
   ]
