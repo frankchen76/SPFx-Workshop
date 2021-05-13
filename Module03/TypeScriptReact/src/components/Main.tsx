@@ -7,6 +7,7 @@ interface IMainState {
     label: string;
 }
 export class Main extends React.Component<{}, IMainState> {
+    private _id: string;
     constructor(props: {}) {
         super(props);
         this.state = {
