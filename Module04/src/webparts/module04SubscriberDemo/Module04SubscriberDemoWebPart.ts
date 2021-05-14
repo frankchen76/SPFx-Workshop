@@ -13,11 +13,13 @@ import { IModule04SubscriberDemoProps } from './components/IModule04SubscriberDe
 
 import { DynamicProperty } from '@microsoft/sp-component-base';
 import {
+  IWebPartPropertiesMetadata
+} from '@microsoft/sp-webpart-base';
+import {
   DynamicDataSharedDepth,
-  IWebPartPropertiesMetadata,
   PropertyPaneDynamicFieldSet,
   PropertyPaneDynamicField
-} from '@microsoft/sp-webpart-base';
+} from '@microsoft/sp-property-pane';
 
 export interface IModule04SubscriberDemoWebPartProps {
   description: string;
