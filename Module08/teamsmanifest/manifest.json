@@ -1,0 +1,49 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.9/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.9",
+    "version": "1.0.0",
+    "id": "7ba8d006-fbd2-4c40-a83d-5ccef67626e0",
+    "packageName": "com.microsoft.teams.contoso.Module08Demo1",
+    "developer": {
+        "name": "Contoso",
+        "websiteUrl": "https://m365x725618.sharepoint.com/sites/ContosoAssets",
+        "privacyUrl": "https://m365x725618.sharepoint.com/sites/ContosoAssets",
+        "termsOfUseUrl": "https://m365x725618.sharepoint.com/sites/ContosoAssets"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "Module08Demo1-TeamsManifest",
+        "full": "Module08Demo1-TeamsManifest"
+    },
+    "description": {
+        "short": "Module08Demo1 created from TeamsManifest",
+        "full": "Module08Demo1 created from TeamsManifest"
+    },
+    "accentColor": "#FFFFFF",
+    "staticTabs": [
+        {
+            "entityId": "20000",
+            "name": "Module08Demo01",
+            "contentUrl": "https://{teamSiteDomain}/_layouts/15/TeamsLogon.aspx?SPFX=true&dest=/_layouts/15/teamshostedapp.aspx%3Fteams%26personal%26componentId=7ba8d006-fbd2-4c40-a83d-5ccef67626e0%26forceLocale={locale}",
+            "scopes": [
+                "personal"
+            ]
+        },
+        {
+            "entityId": "about",
+            "scopes": [
+                "personal"
+            ]
+        }
+    ],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": [
+        "m365x725618.sharepoint.com"
+    ]
+}
