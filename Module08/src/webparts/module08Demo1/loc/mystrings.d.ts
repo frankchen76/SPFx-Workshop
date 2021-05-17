@@ -2,6 +2,7 @@ declare interface IModule08Demo1WebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
   DescriptionFieldLabel: string;
+  TitleFieldLabel: string;
 }
 
 declare module 'Module08Demo1WebPartStrings' {

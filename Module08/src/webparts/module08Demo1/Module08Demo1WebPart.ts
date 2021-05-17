@@ -13,6 +13,7 @@ import { IModule08Demo1Props } from './components/IModule08Demo1Props';
 
 export interface IModule08Demo1WebPartProps {
   description: string;
+  title: string;
 }
 
 export default class Module08Demo1WebPart extends BaseClientSideWebPart<IModule08Demo1WebPartProps> {
@@ -23,6 +24,7 @@ export default class Module08Demo1WebPart extends BaseClientSideWebPart<IModule0
       Module08Demo1,
       {
         description: this.properties.description,
+        title: this.properties.title,
         context: this.context
       }
     );
@@ -50,6 +52,9 @@ export default class Module08Demo1WebPart extends BaseClientSideWebPart<IModule0
               groupName: strings.BasicGroupName,
               groupFields: [
                 PropertyPaneTextField('description', {
+                  label: strings.DescriptionFieldLabel
+                }),
+                PropertyPaneTextField('title', {
                   label: strings.DescriptionFieldLabel
                 })
               ]

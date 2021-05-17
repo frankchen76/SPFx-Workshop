@@ -2,19 +2,17 @@ import * as React from 'react';
 import styles from './Module07Demo.module.scss';
 import { IModule07DemoProps } from './IModule07DemoProps';
 import { escape } from '@microsoft/sp-lodash-subset';
-import { PrimaryButton, autobind } from 'office-ui-fabric-react';
+import { PrimaryButton } from 'office-ui-fabric-react';
 import { sp, IFieldAddResult, IListAddResult } from "@pnp/sp/presets/all";
 import { Log } from '@microsoft/sp-core-library';
 
 export default class Module07Demo extends React.Component<IModule07DemoProps, {}> {
 
-  @autobind
-  private async _testHandler(): Promise<void> {
+  private _testHandler = async (): Promise<void> => {
     Log.info('Module07Demo', `test log infomration`);
   }
 
-  @autobind
-  private async _createArtifactsHandler(): Promise<void> {
+  private _createArtifactsHandler = async (): Promise<void> => {
     // this will create a list with template 101 (Document library), content types enabled and show it on the quick launch (using additionalSettings)
     const listAddResult: IListAddResult = await sp.web.lists.add("TestList2",
       "This is a description of doc lib.",

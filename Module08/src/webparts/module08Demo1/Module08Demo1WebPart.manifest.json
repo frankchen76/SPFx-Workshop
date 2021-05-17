@@ -28,7 +28,8 @@
       },
       "officeFabricIconFontName": "Page",
       "properties": {
-        "description": "Module08Demo1"
+        "description": "Module08Demo1",
+        "title": "Module08Demo1"
       }
     }
   ]
