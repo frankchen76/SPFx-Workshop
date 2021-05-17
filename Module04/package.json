@@ -23,9 +23,6 @@
     "@pnp/graph": "^2.4.0",
     "@pnp/sp": "^2.4.0"
   },
-  "resolutions": {
-    "@types/react": "16.9.36"
-  },
   "devDependencies": {
     "@types/react": "16.9.36",
     "@types/react-dom": "16.9.8",
