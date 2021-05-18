@@ -1,8 +1,12 @@
 ## module-10-demo
 
-This is where you include your WebPart documentation.
+This demonstrated the how to customize
+* webpack 
+* gulp
 
-### Building the code
+## Note
+you need to install html-loader@1.3.2 for webpack v4. the latest html-loader@2.1.2 doesn't support webpack v4
+## Building the code
 
 ```bash
 git clone the repo

@@ -11,7 +11,9 @@ build.addSuppression(`Warning - [sass] The local CSS class 'ms-Grid' is not came
 
 let subTaskUpdateVersion = build.subTask('update-version-subtask', function (gulp, buildOptions, done) {
   var self = this;
-  self.log(`build parameter: ${buildOptions.args[PARAMETER_VERSION]}`);
+  let inputVersion = buildOptions.args[PARAMETER_VERSION];
+  let newVersion = "";
+  self.log(`build parameter: ${inputVersion}`);
   return gulp.src('./config/package-solution.json')
     .pipe(jeditor(function (json) {
       let currentVersion = json.solution.version;
@@ -22,16 +24,21 @@ let subTaskUpdateVersion = build.subTask('update-version-subtask', function (gul
       }
       if (versionStrings != null && versionStrings.length > 2) {
         //check if input version includes "_"
-        let inputVersion = buildOptions.args[PARAMETER_VERSION];
-        if (inputVersion.indexOf('_') != -1) {
+        self.log(`inputVersion: ${inputVersion}`);
+        if (inputVersion && inputVersion.indexOf('_') != -1) {
           const inputVersionArray = inputVersion.split('_');
           inputVersion = inputVersionArray[inputVersionArray.length - 1];
           //get last mmdd.ref
-          inputVersion = inputVersion.substring(4, inputVersion.length);
-          self.log(`buildOptions parameter '${buildOptions.args[PARAMETER_VERSION]}' include '_' and use last segment ${inputVersion}`);
+          //inputVersion = inputVersion.substring(4, inputVersion.length);
+          newVersion = inputVersion.substring(4, inputVersion.length);
+          self.log(`buildOptions parameter '${buildOptions.args[PARAMETER_VERSION]}' include '_' and use last segment ${newVersion}`);
+        } else {
+          //auto increase the version
+          newVersion = +versionStrings[3] + 1;
         }
 
-        json.solution.version = `${versionStrings[0]}.${versionStrings[1]}.${inputVersion}`;
+        //json.solution.version = `${versionStrings[0]}.${versionStrings[1]}.${inputVersion}`;
+        json.solution.version = `${versionStrings[0]}.${versionStrings[1]}.${versionStrings[2]}.${newVersion}`;
         self.log(`version: ${json.solution.version}`);
       } else {
         self.log(`version entry is either empty or not as "major.minor.pathch" format. currentVersion: ${currentVersion}`);
@@ -85,16 +92,25 @@ build.configureWebpack.mergeConfig({
     generatedConfiguration.module.rules.push({
       test: /\.md$/,
       use: [{
-          loader: 'html-loader'
-        },
-        {
-          loader: 'markdown-loader'
-        }
+        loader: 'html-loader'
+      },
+      {
+        loader: 'markdown-loader'
+      }
       ]
     });
 
     return generatedConfiguration;
   }
 });
+
+var getTasks = build.rig.getTasks;
+build.rig.getTasks = function () {
+  var result = getTasks.call(build.rig);
+
+  result.set('serve', result.get('serve-deprecated'));
+
+  return result;
+};
 
 build.initialize(gulp);
