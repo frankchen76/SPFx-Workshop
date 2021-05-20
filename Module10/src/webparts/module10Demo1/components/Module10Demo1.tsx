@@ -11,7 +11,7 @@ export default class Module10Demo1 extends React.Component<IModule10Demo1Props, 
         <div className={styles.container}>
           <div className={styles.row}>
             <div className={styles.column}>
-              <span className={styles.title}>MarkdownLoader3</span>
+              <span className={styles.title}>MarkdownLoader-RHI</span>
             </div>
           </div>
           <div className={styles.row}>
