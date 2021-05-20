@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from './Module15Demo1.module.scss';
 import { IModule15Demo1Props } from './IModule15Demo1Props';
 import { escape } from '@microsoft/sp-lodash-subset';
-import { PrimaryButton, Stack, Spinner, autobind } from 'office-ui-fabric-react';
+import { PrimaryButton, Stack, Spinner } from 'office-ui-fabric-react';
 import { IModule15Demo1State } from './IModule15Demo1State';
 import { AadHttpClient, HttpClient } from '@microsoft/sp-http';
 
@@ -15,8 +15,7 @@ export default class Module15Demo1 extends React.Component<IModule15Demo1Props, 
     };
   }
 
-  @autobind
-  private async _msGraphHttpClientTestHandler(): Promise<void> {
+  private _msGraphHttpClientTestHandler = async (): Promise<void> => {
     try {
       this.setState({
         loading: true
@@ -38,8 +37,7 @@ export default class Module15Demo1 extends React.Component<IModule15Demo1Props, 
       });
     }
   }
-  @autobind
-  private async _aadHttpClientTestHandler(): Promise<void> {
+  private _aadHttpClientTestHandler = async (): Promise<void> => {
     try {
       this.setState({
         loading: true
@@ -59,8 +57,7 @@ export default class Module15Demo1 extends React.Component<IModule15Demo1Props, 
       });
     }
   }
-  @autobind
-  private async _customAPIHandler(): Promise<void> {
+  private _customAPIHandler = async (): Promise<void> => {
     try {
       this.setState({
         loading: true
