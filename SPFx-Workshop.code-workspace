@@ -1,0 +1,34 @@
+{
+    "folders": [
+		{
+			"path": "Module03"
+		},
+		{
+			"path": "Module04"
+		},
+		{
+			"path": "Module05\\Module05-SPO"
+		},
+		{
+			"path": "Module07\\Module07-Demo01"
+		},
+		{
+			"path": "Module08"
+		},
+		{
+			"path": "Module10"
+		},
+		{
+			"path": "Module11"
+		},
+		{
+			"path": "Module15\\Module15-GraphAPI"
+		},
+		{
+			"path": "Module15\\Module15-DomainIsolation"
+		},
+		{
+			"path": "Module16\\Module16-Demo1"
+		}
+	]
+}

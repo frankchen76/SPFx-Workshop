@@ -1,13 +1,13 @@
 import * as React from 'react';
-import styles from './Module16Demo1.module.scss';
-import { IModule16Demo1Props } from './IModule16Demo1Props';
+import styles from './Module15Demo2.module.scss';
+import { IModule15Demo2Props } from './IModule15Demo2Props';
 import { escape } from '@microsoft/sp-lodash-subset';
-import { PrimaryButton, Stack, Spinner, autobind } from 'office-ui-fabric-react';
-import { IModule16Demo1State } from './IModule16Demo1State';
+import { PrimaryButton, Stack, Spinner } from 'office-ui-fabric-react';
+import { IModule15Demo2State } from './IModule15Demo2State';
 import { AadHttpClient, HttpClient } from '@microsoft/sp-http';
 
-export default class Module16Demo1 extends React.Component<IModule16Demo1Props, IModule16Demo1State> {
-  constructor(props: IModule16Demo1Props) {
+export default class Module15Demo2 extends React.Component<IModule15Demo2Props, IModule15Demo2State> {
+  constructor(props: IModule15Demo2Props) {
     super(props);
     this.state = {
       loading: false,
@@ -15,23 +15,14 @@ export default class Module16Demo1 extends React.Component<IModule16Demo1Props, 
     };
   }
 
-  @autobind
-  private async _customAPIHandler(): Promise<void> {
+  private _aadHttpClientTestHandler = async (): Promise<void> => {
     try {
       this.setState({
         loading: true
       });
-      const url = 'https://frankchenpfetest-testwebapi01.azurewebsites.net/weatherforecast';
-
-      const aadHttpClient = await this.props.context
-        .aadHttpClientFactory
-        .getClient('https://M365x725618.onmicrosoft.com/TestDotNetCore.WebAPI');
+      const url = 'https://graph.microsoft.com/v1.0/me';
+      const aadHttpClient = await this.props.context.aadHttpClientFactory.getClient('https://graph.microsoft.com');
       const response = await aadHttpClient.get(url, AadHttpClient.configurations.v1);
-      if (!response.ok) {
-        const err = await response.text();
-        throw new Error(err);
-      }
-
       const result = await response.json();
       this.setState({
         loading: false,
@@ -40,20 +31,20 @@ export default class Module16Demo1 extends React.Component<IModule16Demo1Props, 
     } catch (error) {
       this.setState({
         loading: false,
-        jsonResult: JSON.stringify(error, null, 4)
+        jsonResult: error
       });
     }
   }
 
-  public render(): React.ReactElement<IModule16Demo1Props> {
+  public render(): React.ReactElement<IModule15Demo2Props> {
     return (
-      <div className={styles.module16Demo1}>
+      <div className={styles.module15Demo2}>
         <div className={styles.container}>
           <div className={styles.row}>
             <div className={styles.column}>
               <span className={styles.title}>MS Graph API Demo</span>
               <Stack horizontal disableShrink horizontalAlign="space-evenly">
-                <PrimaryButton text="Customer API Test" onClick={this._customAPIHandler} />
+                <PrimaryButton text="AadHttpClient Test" onClick={this._aadHttpClientTestHandler} />
               </Stack>
             </div>
           </div>
