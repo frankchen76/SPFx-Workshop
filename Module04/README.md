@@ -2,37 +2,13 @@
 
 This is where you include your WebPart documentation.
 
-## Description: 
-### module04Demo1: 
-* simple helloworld demo
-* OOTB property pane control
-* PropertyPaneText
+## Demo: 
+|Sample|Description|
+|------------------- | :----------------------------- |
+|module04Demo1| <ul><li>simple helloworld demo</li><li>OOTB property pane control</li><li>PropertyPaneText</li></ul>|
+|module04Demo2| custom property pane control ASyncDropdown|
+|module04Demo3| <ul><li>Data Access demonstration for SPO REST and PnPJS</li><li>React useContext</li></ul>|
+|module04Demo4| Single App Part and full width|
+|Module04DemoPublisher| <ul><li>Dynamic property publish</li><li>Web part icon</li></ul>|
+|Module04DemoSubscriber| Dynamic property subscribe|
 
-### module04Demo2:
-* custom property pane control ASyncDropdown
-
-### Building the code
-* Service factory demo
-* PnPjs demo
-* SPO REST API demo
-
-```bash
-git clone the repo
-npm i
-npm i -g gulp
-gulp
-```
-
-This package produces the following:
-
-* lib/* - intermediate-stage commonjs build artifacts
-* dist/* - the bundled script, along with other resources
-* deploy/* - all resources which should be uploaded to a CDN.
-
-### Build options
-
-gulp clean - TODO
-gulp test - TODO
-gulp serve - TODO
-gulp bundle - TODO
-gulp package-solution - TODO

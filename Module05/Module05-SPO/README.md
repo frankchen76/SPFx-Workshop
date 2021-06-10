@@ -2,6 +2,13 @@
 
 This is where you include your WebPart documentation.
 
+## Demo: 
+|Sample|Description|
+|------------------- | :----------------------------- |
+|Module05Demo1| demonstrate footer and header for page placeholder. Run ```gulp serve --config=module05AppCustomizer```|
+|Module05Demo2|  demonstrate command set for Document library to show two button for both command set and context menu Run ```gulp serve --config=module05CommandSet```|
+|MOdule05Demo3| demonstrate a percent field which you can show a d percent bar based on the value of "Percent" column. Run ```gulp serve --config=module05FieldCustomizer```|
+
 ### Building the code
 
 ```bash
