@@ -38,6 +38,26 @@
         "--remote-debugging-port=9222",
         "-incognito"
       ]
+    },
+    {
+      "name": "Hosted workbench with profile",
+      "type": "chrome",
+      "request": "launch",
+      "url": "https://m365x725618.sharepoint.com/sites/SPFxWorkshop-Dev/_layouts/workbench.aspx",
+      "webRoot": "${workspaceRoot}",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///.././src/*": "${webRoot}/src/*",
+        "webpack:///../../../src/*": "${webRoot}/src/*",
+        "webpack:///../../../../src/*": "${webRoot}/src/*",
+        "webpack:///../../../../../src/*": "${webRoot}/src/*"
+      },
+      "userDataDir": "C:\\Users\\tachen\\AppData\\Local\\Google\\Chrome\\User Data",
+      "runtimeArgs": [
+        "--remote-debugging-port=9222",
+        "--harmony",
+        "--profile-directory=Profile 1"
+      ]
     }
   ]
 }

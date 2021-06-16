@@ -2,6 +2,19 @@
 
 This is where you include your WebPart documentation.
 
+CouponAPI: https://spfxworkshop-couponapi.azurewebsites.net/api/coupon
+
+## Description
+### package-solution.json
+```JSON
+    "webApiPermissionRequests": [
+      {
+        "resource": "SPFxWorkshop.CouponAPI", //THIS IS the custom API's name
+        "scope": "Coupon.ReadWrite"
+      }
+    ]
+```
+
 ### Building the code
 
 ```bash

@@ -8,8 +8,8 @@
     "isDomainIsolated": false,
     "webApiPermissionRequests": [
       {
-        "resource": "https://M365x725618.onmicrosoft.com/TestDotNetCore.WebAPI",
-        "scope": "user_impersonation"
+        "resource": "SPFxWorkshop.CouponAPI",
+        "scope": "Coupon.ReadWrite"
       }
     ]
   },

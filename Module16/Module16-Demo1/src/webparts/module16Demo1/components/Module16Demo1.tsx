@@ -20,11 +20,11 @@ export default class Module16Demo1 extends React.Component<IModule16Demo1Props, 
       this.setState({
         loading: true
       });
-      const url = 'https://frankchenpfetest-testwebapi01.azurewebsites.net/weatherforecast';
+      const url = 'https://spfxworkshop-couponapi.azurewebsites.net/api/coupon';
 
       const aadHttpClient = await this.props.context
         .aadHttpClientFactory
-        .getClient('https://M365x725618.onmicrosoft.com/TestDotNetCore.WebAPI');
+        .getClient('api://4dbe5736-bf2c-4efe-8d36-ec1afb4ebf94');
       const response = await aadHttpClient.get(url, AadHttpClient.configurations.v1);
       if (!response.ok) {
         const err = await response.text();
