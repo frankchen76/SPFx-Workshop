@@ -13,6 +13,22 @@ This project showcase how to programmatically manipulate SPO modern page. the co
   * create text web part
   * create image web part and other web part
 
+# Instruction
+* Follow [Configuring authentication](https://pnp.github.io/pnpcore/using-the-sdk/configuring%20authentication.html) to create your AAD Application for authentication
+* Update ClientId and TenantId 
+```C#
+new PnPCoreAuthenticationCredentialConfigurationOptions
+{
+    ClientId = "[ClientId]",
+    TenantId = "[TenantId]",
+    Interactive = new PnPCoreAuthenticationInteractiveOptions
+    {
+        RedirectUri = new Uri("http://localhost")
+    }
+});
+
+```
+
 # Usage
 * clone the code
 * run ```dotnet restore``` to install all components
