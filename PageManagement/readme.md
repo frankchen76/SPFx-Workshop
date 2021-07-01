@@ -14,7 +14,7 @@ This project showcase how to programmatically manipulate SPO modern page. the co
   * create image web part and other web part
 
 # Instruction
-* Follow [Configuring authentication](https://pnp.github.io/pnpcore/using-the-sdk/configuring%20authentication.html) to create your AAD Application for authentication
+* If you want to use your own AAD Application, follow [Configuring authentication](https://pnp.github.io/pnpcore/using-the-sdk/configuring%20authentication.html) to create your AAD Application for authentication
 * Update ClientId and TenantId 
 ```C#
 new PnPCoreAuthenticationCredentialConfigurationOptions
@@ -27,6 +27,17 @@ new PnPCoreAuthenticationCredentialConfigurationOptions
     }
 });
 
+```
+* If you want to use PnP Multi-tenant enterprise application, you need to consent their application and use below code
+```C#
+serviceCollection.AddPnPCore(options =>
+{
+    options.PnPContext.GraphFirst = true;
+    options.HttpRequests.UserAgent = "ISV|Contoso|ProductX";
+
+    // // use below statement if you want to use mutlipel tenant enterprise application from PnP lib
+    options.DefaultAuthenticationProvider = new PnP.Core.Auth.InteractiveAuthenticationProvider();
+});
 ```
 
 # Usage
