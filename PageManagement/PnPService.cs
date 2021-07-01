@@ -88,7 +88,8 @@ namespace ContentManagement
 
         public async Task GetWeb()
         {
-            using (var context = await _pnpContextFactory.CreateAsync("FrankCommunication1"))
+            // using (var context = await _pnpContextFactory.CreateAsync("FrankCommunication1"))
+            using (var context = await _pnpContextFactory.CreateAsync(new Uri("https://m365x725618.sharepoint.com/sites/FrankCommunication1")))
             {
                 await context.Web.LoadAsync(p => p.Title);
                 Console.WriteLine($"Title: {context.Web.Title}");
