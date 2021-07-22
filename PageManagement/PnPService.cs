@@ -1,6 +1,8 @@
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using PnP.Core.Model.SharePoint;
+using PnP.Core.QueryModel;
 using PnP.Core.Services;
 
 namespace ContentManagement
@@ -91,8 +93,44 @@ namespace ContentManagement
             // using (var context = await _pnpContextFactory.CreateAsync("FrankCommunication1"))
             using (var context = await _pnpContextFactory.CreateAsync(new Uri("https://m365x725618.sharepoint.com/sites/FrankCommunication1")))
             {
-                await context.Web.LoadAsync(p => p.Title);
-                Console.WriteLine($"Title: {context.Web.Title}");
+                // await context.Web.LoadAsync(p => p.Title);
+                // Console.WriteLine($"Title: {context.Web.Title}");
+                //var items = context.Web.Lists.GetByTitle("Site Pages").Items
+
+                var myList = context.Web.Lists.GetByTitle("Site Pages", p => p.Title, p => p.Items,
+                                                     p => p.Fields.QueryProperties(p => p.InternalName,
+                                                                                   p => p.FieldTypeKind,
+                                                                                   p => p.TypeAsString,
+                                                                                   p => p.Title));
+                string viewXml = @"<View>
+                    <ViewFields>
+                      <FieldRef Name='Title' />
+                      <FieldRef Name='FileLeafRef' />
+                      <FieldRef Name='PageLayoutType' />
+                    </ViewFields>
+                    <Query>
+                    </Query>
+                   </View>";
+
+                // foreach (var field in myList.Fields)
+                // {
+                //     Console.WriteLine($"{field.Title}: {field.InternalName}");
+                // }
+
+                // Get the item with title "Item1"
+                var output = await myList.LoadListDataAsStreamAsync(new RenderListDataOptions()
+                {
+                    ViewXml = viewXml,
+                    RenderOptions = RenderListDataOptionsFlags.ListData
+                });
+                //Iterate over the retrieved list items
+                foreach (var listItem in myList.Items.AsRequested())
+                {
+                    string fileLeafRef = listItem.Values.ContainsKey("FileLeafRef") && listItem.Values["FileLeafRef"] != null ? listItem.Values["FileLeafRef"].ToString() : "NoKey";
+                    string pageLayoutType = listItem.Values.ContainsKey("PageLayoutType") && listItem.Values["PageLayoutType"] != null ? listItem.Values["PageLayoutType"].ToString() : "NoKey";
+                    Console.WriteLine($"{listItem.Title}: {fileLeafRef}, {pageLayoutType}");
+                }
+                Console.WriteLine("Done");
             }
         }
     }

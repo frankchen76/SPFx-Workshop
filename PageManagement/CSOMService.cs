@@ -20,9 +20,17 @@ namespace ContentManagement
 
             using (var context = _authService.GetContext(site))
             {
-                context.Load(context.Web, p => p.Title);
-                await context.ExecuteQueryAsync();
-                Console.WriteLine($"Title: {context.Web.Title}");
+                // context.Load(context.Web, p => p.Title);
+                // await context.ExecuteQueryAsync();
+                // Console.WriteLine($"Title: {context.Web.Title}");
+                var listItems = context.Web.Lists.GetByTitle("Site Pages").GetItems(CamlQuery.CreateAllItemsQuery());
+                context.Load(listItems, i => i.Include(f => f.Id));
+
+                var files = context.Web.Lists.GetByTitle("Site Pages").RootFolder.Files;
+                context.Load(files, fs => fs.Include(f => f.ListItemAllFields));
+                context.ExecuteQuery();
+
+                Console.WriteLine(files);
             }
         }
         public async Task CreateModernPage()
