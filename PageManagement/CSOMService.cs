@@ -23,14 +23,18 @@ namespace ContentManagement
                 // context.Load(context.Web, p => p.Title);
                 // await context.ExecuteQueryAsync();
                 // Console.WriteLine($"Title: {context.Web.Title}");
-                var listItems = context.Web.Lists.GetByTitle("Site Pages").GetItems(CamlQuery.CreateAllItemsQuery());
-                context.Load(listItems, i => i.Include(f => f.Id));
-
-                var files = context.Web.Lists.GetByTitle("Site Pages").RootFolder.Files;
-                context.Load(files, fs => fs.Include(f => f.ListItemAllFields));
+                var list = context.Web.Lists.GetByTitle("Documents");
+                var result = list.RenderExtendedListFormData(1, "EditForm", 2, RenderListFormDataOptions.IncludeListViewData, 0);
+                //context.Load(result);
                 context.ExecuteQuery();
+                // var listItems = context.Web.Lists.GetByTitle("Site Pages").GetItems(CamlQuery.CreateAllItemsQuery());
+                // context.Load(listItems, i => i.Include(f => f.Id));
 
-                Console.WriteLine(files);
+                // var files = context.Web.Lists.GetByTitle("Site Pages").RootFolder.Files;
+                // context.Load(files, fs => fs.Include(f => f.ListItemAllFields));
+                // context.ExecuteQuery();
+
+                // Console.WriteLine(files);
             }
         }
         public async Task CreateModernPage()
@@ -59,6 +63,10 @@ namespace ContentManagement
                 Console.WriteLine($"{pageRelativeUrl} was created. ");
             }
 
+        }
+        public async Task CreateModernPageFromClassicPage()
+        {
+            throw new NotImplementedException();
         }
     }
 }

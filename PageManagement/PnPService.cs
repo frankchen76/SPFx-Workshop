@@ -87,17 +87,97 @@ namespace ContentManagement
                 // Console.WriteLine($"{pageName} was created");
             }
         }
+        public async Task CreateModernPageFromClassicPage()
+        {
+            string url = "https://m365x725618.sharepoint.com/sites/ClassicPublishing01";
+            // Change RowLimit to a reasonable size. the pagination process will retrieve all pages. 
+            using (var context = await _pnpContextFactory.CreateAsync(new Uri(url)))
+            {
+                var myList = context.Web.Lists.GetByTitle("Pages");
+                string viewXml = @"<View>
+                    <ViewFields>
+                      <FieldRef Name='Title' />
+                      <FieldRef Name='FileLeafRef' />
+                      <FieldRef Name='PageLayoutType' />
+                      <FieldRef Name='PublishingPageLayout' />
+                      <FieldRef Name='PublishingPageContent' />
+                    </ViewFields>
+                    <Query>
+                    </Query>
+                    <RowLimit Paged='TRUE'>10</RowLimit>
+                   </View>";
+
+                bool paging = true;
+                string nextPage = null;
+                while (paging)
+                {
+                    var output = await myList.LoadListDataAsStreamAsync(new RenderListDataOptions()
+                    {
+                        ViewXml = viewXml,
+                        RenderOptions = RenderListDataOptionsFlags.ListData,
+                        Paging = nextPage ?? null,
+                    });
+                    if (output.ContainsKey("NextHref"))
+                    {
+                        nextPage = output["NextHref"].ToString().Substring(1);
+                    }
+                    else
+                    {
+                        paging = false;
+                    }
+                }
+                //Iterate over the retrieved list items
+                foreach (var listItem in myList.Items.AsRequested())
+                {
+                    // just migrate TestClassic.aspx (ID=8) page
+                    if (listItem.Id == 8)
+                    {
+                        string fileLeafRef = listItem.Values.ContainsKey("FileLeafRef") && listItem.Values["FileLeafRef"] != null ? listItem.Values["FileLeafRef"].ToString() : "NoKey";
+                        string pageLayoutContent = listItem.Values.ContainsKey("PublishingPageContent") && listItem.Values["PublishingPageContent"] != null ? listItem.Values["PublishingPageContent"].ToString() : String.Empty;
+
+                        Console.WriteLine($"Retrieved content from {fileLeafRef} was completed.");
+                        if (pageLayoutContent != null && pageLayoutContent != String.Empty)
+                        {
+                            // await CreateModernPage1(fileLeafRef, pageLayoutContent);
+                        }
+                        else
+                        {
+                            Console.WriteLine($"No content was found from {fileLeafRef}.");
+                        }
+                    }
+                }
+                Console.WriteLine("Done");
+            }
+        }
+
+        private async Task CreateModernPage1(string pageName, string pageContent)
+        {
+            using (var context = await _pnpContextFactory.CreateAsync("FrankCommunication1"))
+            {
+                // Add Text web part
+                var newPage = await context.Web.NewPageAsync();
+                // adding sections to the page
+                newPage.AddSection(CanvasSectionTemplate.OneColumn, 1);
+                // Adding text control to the first section, first column
+                newPage.AddControl(newPage.NewTextPart(pageContent), newPage.Sections[0].Columns[0]);
+                // Save the page
+                await newPage.SaveAsync(pageName);
+                Console.WriteLine($"{pageName} was created");
+            }
+        }
 
         public async Task GetWeb()
         {
             // using (var context = await _pnpContextFactory.CreateAsync("FrankCommunication1"))
-            using (var context = await _pnpContextFactory.CreateAsync(new Uri("https://m365x725618.sharepoint.com/sites/FrankCommunication1")))
+            // string url="https://m365x725618.sharepoint.com/sites/FrankCommunication1";
+            string url = "https://m365x725618.sharepoint.com/sites/ClassicPublishing01";
+            using (var context = await _pnpContextFactory.CreateAsync(new Uri(url)))
             {
                 // await context.Web.LoadAsync(p => p.Title);
                 // Console.WriteLine($"Title: {context.Web.Title}");
                 //var items = context.Web.Lists.GetByTitle("Site Pages").Items
 
-                var myList = context.Web.Lists.GetByTitle("Site Pages", p => p.Title, p => p.Items,
+                var myList = context.Web.Lists.GetByTitle("Pages", p => p.Title, p => p.Items,
                                                      p => p.Fields.QueryProperties(p => p.InternalName,
                                                                                    p => p.FieldTypeKind,
                                                                                    p => p.TypeAsString,
@@ -107,6 +187,8 @@ namespace ContentManagement
                       <FieldRef Name='Title' />
                       <FieldRef Name='FileLeafRef' />
                       <FieldRef Name='PageLayoutType' />
+                      <FieldRef Name='PublishingPageLayout' />
+                      <FieldRef Name='PublishingPageContent' />
                     </ViewFields>
                     <Query>
                     </Query>
@@ -128,7 +210,10 @@ namespace ContentManagement
                 {
                     string fileLeafRef = listItem.Values.ContainsKey("FileLeafRef") && listItem.Values["FileLeafRef"] != null ? listItem.Values["FileLeafRef"].ToString() : "NoKey";
                     string pageLayoutType = listItem.Values.ContainsKey("PageLayoutType") && listItem.Values["PageLayoutType"] != null ? listItem.Values["PageLayoutType"].ToString() : "NoKey";
-                    Console.WriteLine($"{listItem.Title}: {fileLeafRef}, {pageLayoutType}");
+                    string publishingPageLayout = listItem.Values.ContainsKey("PublishingPageLayout") &&
+                        listItem.Values["PublishingPageLayout"] != null
+                        ? ((PnP.Core.Model.SharePoint.IFieldUrlValue)listItem.Values["PublishingPageLayout"]).Description : "NoValue";
+                    Console.WriteLine($"Title: {listItem.Title}: FileLeafRef: {fileLeafRef}, PageLayoutType: {pageLayoutType}, PublishingPageLayout: {publishingPageLayout}");
                 }
                 Console.WriteLine("Done");
             }

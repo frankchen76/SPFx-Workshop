@@ -14,7 +14,8 @@ namespace ContentManagement
         {
             var services = ConfigServices(args);
             var spoService = services.GetService<ISPOService>();
-            await spoService.GetWeb();
+            await spoService.CreateModernPageFromClassicPage();
+            // await spoService.GetWeb();
             // await spoService.CreateModernPage();
         }
         private static ServiceProvider ConfigServices(string[] args)
@@ -52,6 +53,10 @@ namespace ContentManagement
                 {
                     SiteUrl = "https://m365x725618.sharepoint.com/sites/FrankCommunication1"
                 });
+                options.Sites.Add("ClassicPublishing01", new PnPCoreSiteOptions
+                {
+                    SiteUrl = "https://m365x725618.sharepoint.com/sites/ClassicPublishing01"
+                });
 
                 // // use below statement if you want to use mutlipel tenant enterprise application from PnP lib
                 options.DefaultAuthenticationProvider = new PnP.Core.Auth.InteractiveAuthenticationProvider();
@@ -59,6 +64,7 @@ namespace ContentManagement
             // Add the PnP Core SDK Authentication Providers with AAD App
             serviceCollection.AddPnPCoreAuthentication(options =>
             {
+                // use below statement if you want to use your own AAD Application from PnP lib
                 // Configure an Authentication Provider to use Interactive authentication
                 options.Credentials.Configurations.Add("interactive",
                     new PnPCoreAuthenticationCredentialConfigurationOptions

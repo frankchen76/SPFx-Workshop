@@ -6,5 +6,6 @@ namespace ContentManagement
     {
         Task GetWeb();
         Task CreateModernPage();
+        Task CreateModernPageFromClassicPage();
     }
 }
