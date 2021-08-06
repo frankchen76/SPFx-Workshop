@@ -138,7 +138,7 @@ namespace ContentManagement
                         Console.WriteLine($"Retrieved content from {fileLeafRef} was completed.");
                         if (pageLayoutContent != null && pageLayoutContent != String.Empty)
                         {
-                            // await CreateModernPage1(fileLeafRef, pageLayoutContent);
+                            await CreateModernPage1(fileLeafRef, pageLayoutContent);
                         }
                         else
                         {
