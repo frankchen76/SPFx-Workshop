@@ -1,10 +1,10 @@
 import * as React from "react";
-import { FC, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 
 export interface MyTimerProps {
     label: string;
 }
-export const MyTimerFunc: FC<MyTimerProps> = (props: MyTimerProps) => {
+export const MyTimerFunc = (props: MyTimerProps) => {
     const [timeLabel, setTimeLabel] = useState("");
     let _timerId: NodeJS.Timeout;
     useEffect(() => {
