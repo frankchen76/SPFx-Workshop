@@ -1,13 +1,31 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
-  "solution": {
-    "name": "module-04-demo-1-client-side-solution",
-    "id": "1ba11062-44f3-401d-8ba1-0739af039466",
-    "version": "1.0.0.0",
-    "includeClientSideAssets": true,
-    "isDomainIsolated": false
-  },
-  "paths": {
-    "zippedPackage": "solution/module-04-demo-1.sppkg"
-  }
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+        "name": "module-04-demo-1-client-side-solution",
+        "id": "1ba11062-44f3-401d-8ba1-0739af039466",
+        "version": "1.0.0.0",
+        "includeClientSideAssets": true,
+        "isDomainIsolated": false
+    },
+    "developer": {
+        "name": "",
+        "websiteUrl": "",
+        "privacyUrl": "",
+        "termsOfUseUrl": "",
+        "mpnId": "Undefined-1.15.0"
+    },
+    "metadata": {
+        "shortDescription": {
+            "default": "SPFxv1.15-1 description"
+        },
+        "longDescription": {
+            "default": "SPFxv1.15-1 description"
+        },
+        "screenshotPaths": [],
+        "videoUrl": "",
+        "categories": []
+    },
+    "paths": {
+        "zippedPackage": "solution/module-04-demo-1.sppkg"
+    }
 }

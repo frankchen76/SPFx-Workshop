@@ -1,26 +1,26 @@
 import * as React from "react";
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { IWebService } from "../../../services/web/IWebService";
 import { withServiceScope } from "../../../services/withServiceScope";
 
 export interface IWebInfoProps {
-  service: IWebService;
+    service: IWebService;
 }
-const WebInfo: FC<IWebInfoProps> = (props: IWebInfoProps) => {
-  const [webTitle, setWebTitle] = useState("");
-  useEffect(() => {
-    //
-    const fetchData = async () => {
-      const result = await props.service.getWebBySPORest();
-      console.log(result);
-      setWebTitle(result["Title"]);
-    };
+const WebInfo = (props: IWebInfoProps) => {
+    const [webTitle, setWebTitle] = useState("");
+    useEffect(() => {
+        //
+        const fetchData = async () => {
+            const result = await props.service.getWebBySPORest();
+            console.log(result);
+            setWebTitle(result["Title"]);
+        };
 
-    fetchData();
-  }, []);
+        fetchData();
+    }, []);
 
-  return (
-    <div>Web Title: <b>{webTitle}</b></div>
-  );
+    return (
+        <div>Web Title: <b>{webTitle}</b></div>
+    );
 };
 export default withServiceScope(WebInfo);
