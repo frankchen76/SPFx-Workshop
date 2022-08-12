@@ -22,6 +22,7 @@ export interface IModule04Demo3WebPartProps {
 }
 
 export default class Module04Demo3WebPart extends BaseClientSideWebPart<IModule04Demo3WebPartProps> {
+    private _isDarkTheme: boolean = false;
 
     protected onInit(): Promise<void> {
         getSP(this.context);
@@ -51,6 +52,24 @@ export default class Module04Demo3WebPart extends BaseClientSideWebPart<IModule0
         );
 
         ReactDom.render(element, this.domElement);
+    }
+
+    protected onThemeChanged(currentTheme: IReadonlyTheme | undefined): void {
+        if (!currentTheme) {
+            return;
+        }
+
+        this._isDarkTheme = !!currentTheme.isInverted;
+        const {
+            semanticColors
+        } = currentTheme;
+
+        if (semanticColors) {
+            this.domElement.style.setProperty('--bodyText', semanticColors.bodyText || null);
+            this.domElement.style.setProperty('--link', semanticColors.link || null);
+            this.domElement.style.setProperty('--linkHovered', semanticColors.linkHovered || null);
+        }
+
     }
 
     protected onDispose(): void {
