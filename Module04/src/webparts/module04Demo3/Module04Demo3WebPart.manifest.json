@@ -1,27 +1,35 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
-  "id": "7d7b4c7d-5e2d-4f04-9ca0-ac2eba3cbc63",
-  "alias": "Module04Demo3WebPart",
-  "componentType": "WebPart",
-
-  // The "*" signifies that the version should be taken from the package.json
-  "version": "*",
-  "manifestVersion": 2,
-
-  // If true, the component can only be installed on sites where Custom Script is allowed.
-  // Components that allow authors to embed arbitrary script code should set this to true.
-  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
-  "requiresCustomScript": false,
-  "supportedHosts": ["SharePointWebPart"],
-
-  "preconfiguredEntries": [{
-    "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
-    "group": { "default": "Other" },
-    "title": { "default": "module04Demo3" },
-    "description": { "default": "module04Demo3 description" },
-    "officeFabricIconFontName": "Page",
-    "properties": {
-      "description": "module04Demo3"
-    }
-  }]
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+    "id": "7d7b4c7d-5e2d-4f04-9ca0-ac2eba3cbc63",
+    "alias": "Module04Demo3WebPart",
+    "componentType": "WebPart",
+    // The "*" signifies that the version should be taken from the package.json
+    "version": "*",
+    "manifestVersion": 2,
+    // If true, the component can only be installed on sites where Custom Script is allowed.
+    // Components that allow authors to embed arbitrary script code should set this to true.
+    // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+    "requiresCustomScript": false,
+    "supportedHosts": [
+        "SharePointWebPart"
+    ],
+    "supportsFullBleed": true,
+    "preconfiguredEntries": [
+        {
+            "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
+            "group": {
+                "default": "Other"
+            },
+            "title": {
+                "default": "module04Demo3"
+            },
+            "description": {
+                "default": "module04Demo3 description"
+            },
+            "officeFabricIconFontName": "Page",
+            "properties": {
+                "description": "module04Demo3"
+            }
+        }
+    ]
 }
