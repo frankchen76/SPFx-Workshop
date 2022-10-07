@@ -1,86 +1,144 @@
 {
-  /**
-   * Install Chrome Debugger Extension for Visual Studio Code to debug your components with the
-   * Chrome browser: https://aka.ms/spfx-debugger-extensions
-   */
-  "version": "0.2.0",
-  "configurations": [{
-      "name": "Launch Edge",
-      "request": "launch",
-      "type": "edge",
-      // "version": "canary",
-      "url": "https://m365x725618.sharepoint.com/sites/SPFxWorkshop-Dev?debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&loadSPFX=true&customActions=%7B%22383462fd-7056-4ca0-bddf-4c561c1e7adf%22%3A%7B%22location%22%3A%22ClientSideExtension.ApplicationCustomizer%22%2C%22properties%22%3A%7B%22testMessage%22%3A%22Test+message%22%7D%7D%7D",
-      "webRoot": "${workspaceRoot}",
-      "sourceMaps": true,
-      "sourceMapPathOverrides": {
-        "webpack:///.././src/*": "${webRoot}/src/*",
-        "webpack:///../../../src/*": "${webRoot}/src/*",
-        "webpack:///../../../../src/*": "${webRoot}/src/*",
-        "webpack:///../../../../../src/*": "${webRoot}/src/*"
-      },
-      "userDataDir": "C:\\Users\\tachen\\AppData\\Local\\Microsoft\\Edge\\User Data",
-      "runtimeArgs": [
-        "--remote-debugging-port=2015",
-        "--harmony",
-        "--profile-directory=Profile 4"
-      ]
-    },
-    {
-      "name": "Local workbench",
-      "type": "chrome",
-      "request": "launch",
-      "url": "https://localhost:4321/temp/workbench.html",
-      "webRoot": "${workspaceRoot}",
-      "sourceMaps": true,
-      "sourceMapPathOverrides": {
-        "webpack:///.././src/*": "${webRoot}/src/*",
-        "webpack:///../../../src/*": "${webRoot}/src/*",
-        "webpack:///../../../../src/*": "${webRoot}/src/*",
-        "webpack:///../../../../../src/*": "${webRoot}/src/*"
-      },
-      "runtimeArgs": [
-        "--remote-debugging-port=9222"
-      ]
-    },
-    {
-      "name": "Hosted workbench",
-      "type": "chrome",
-      "request": "launch",
-      "url": "https://m365x725618.sharepoint.com/sites/SPFxWorkshop-Dev?debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&loadSPFX=true&customActions=%7B%22383462fd-7056-4ca0-bddf-4c561c1e7adf%22%3A%7B%22location%22%3A%22ClientSideExtension.ApplicationCustomizer%22%2C%22properties%22%3A%7B%22testMessage%22%3A%22Test+message%22%7D%7D%7D",
-      "webRoot": "${workspaceRoot}",
-      "sourceMaps": true,
-      "sourceMapPathOverrides": {
-        "webpack:///.././src/*": "${webRoot}/src/*",
-        "webpack:///../../../src/*": "${webRoot}/src/*",
-        "webpack:///../../../../src/*": "${webRoot}/src/*",
-        "webpack:///../../../../../src/*": "${webRoot}/src/*"
-      },
-      "userDataDir": "C:\\Users\\tachen\\AppData\\Local\\Google\\Chrome\\User Data",
-      "runtimeArgs": [
-        "--remote-debugging-port=9222",
-        "--harmony",
-        "--profile-directory=Profile 1"
-      ]
-    },
-    {
-      "name": "TestCommunication3",
-      "type": "chrome",
-      "request": "launch",
-      "url": "https://m365x725618.sharepoint.com/sites/TestCommunication3?debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&loadSPFX=true&customActions=%7B%22383462fd-7056-4ca0-bddf-4c561c1e7adf%22%3A%7B%22location%22%3A%22ClientSideExtension.ApplicationCustomizer%22%2C%22properties%22%3A%7B%22testMessage%22%3A%22Test+message%22%7D%7D%7D",
-      "webRoot": "${workspaceRoot}",
-      "sourceMaps": true,
-      "sourceMapPathOverrides": {
-        "webpack:///.././src/*": "${webRoot}/src/*",
-        "webpack:///../../../src/*": "${webRoot}/src/*",
-        "webpack:///../../../../src/*": "${webRoot}/src/*",
-        "webpack:///../../../../../src/*": "${webRoot}/src/*"
-      },
-      "userDataDir": "C:\\Users\\tachen\\AppData\\Local\\Google\\Chrome\\User Data",
-      "runtimeArgs": [
-        "--remote-debugging-port=9222",
-        "--harmony",
-        "--profile-directory=Profile 1"
-      ]
-    }
-  ]
+    /**
+     * Install Chrome Debugger Extension for Visual Studio Code to debug your components with the
+     * Chrome browser: https://aka.ms/spfx-debugger-extensions
+     */
+    "version": "0.2.0",
+    "configurations": [{
+            "name": "Launch Edge",
+            "request": "launch",
+            "type": "edge",
+            // "version": "canary",
+            "url": "https://m365x725618.sharepoint.com/sites/SPFxWorkshop-Dev?debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&loadSPFX=true&customActions=%7B%22383462fd-7056-4ca0-bddf-4c561c1e7adf%22%3A%7B%22location%22%3A%22ClientSideExtension.ApplicationCustomizer%22%2C%22properties%22%3A%7B%22testMessage%22%3A%22Test+message%22%7D%7D%7D",
+            "webRoot": "${workspaceRoot}",
+            "sourceMaps": true,
+            "sourceMapPathOverrides": {
+                "webpack:///.././src/*": "${webRoot}/src/*",
+                "webpack:///../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../../src/*": "${webRoot}/src/*"
+            },
+            "userDataDir": "C:\\Users\\tachen\\AppData\\Local\\Microsoft\\Edge\\User Data",
+            "runtimeArgs": [
+                "--remote-debugging-port=2015",
+                "--harmony",
+                "--profile-directory=Profile 4"
+            ]
+        },
+        {
+            "name": "Local workbench",
+            "type": "chrome",
+            "request": "launch",
+            "url": "https://localhost:4321/temp/workbench.html",
+            "webRoot": "${workspaceRoot}",
+            "sourceMaps": true,
+            "sourceMapPathOverrides": {
+                "webpack:///.././src/*": "${webRoot}/src/*",
+                "webpack:///../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../../src/*": "${webRoot}/src/*"
+            },
+            "runtimeArgs": [
+                "--remote-debugging-port=9222"
+            ]
+        },
+        {
+            "name": "Hosted workbench",
+            "type": "chrome",
+            "request": "launch",
+            "url": "https://m365x725618.sharepoint.com/sites/SPFxWorkshop-Dev?debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&loadSPFX=true&customActions=%7B%22383462fd-7056-4ca0-bddf-4c561c1e7adf%22%3A%7B%22location%22%3A%22ClientSideExtension.ApplicationCustomizer%22%2C%22properties%22%3A%7B%22testMessage%22%3A%22Test+message%22%7D%7D%7D",
+            "webRoot": "${workspaceRoot}",
+            "sourceMaps": true,
+            "sourceMapPathOverrides": {
+                "webpack:///.././src/*": "${webRoot}/src/*",
+                "webpack:///../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../../src/*": "${webRoot}/src/*"
+            },
+            "userDataDir": "C:\\Users\\tachen\\AppData\\Local\\Google\\Chrome\\User Data",
+            "runtimeArgs": [
+                "--remote-debugging-port=9222",
+                "--harmony",
+                "--profile-directory=Profile 1"
+            ]
+        },
+        {
+            "name": "TestCommunication3",
+            "type": "chrome",
+            "request": "launch",
+            "url": "https://m365x725618.sharepoint.com/sites/TestCommunication3?debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&loadSPFX=true&customActions=%7B%22383462fd-7056-4ca0-bddf-4c561c1e7adf%22%3A%7B%22location%22%3A%22ClientSideExtension.ApplicationCustomizer%22%2C%22properties%22%3A%7B%22testMessage%22%3A%22Test+message%22%7D%7D%7D",
+            "webRoot": "${workspaceRoot}",
+            "sourceMaps": true,
+            "sourceMapPathOverrides": {
+                "webpack:///.././src/*": "${webRoot}/src/*",
+                "webpack:///../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../../src/*": "${webRoot}/src/*"
+            },
+            "userDataDir": "C:\\Users\\tachen\\AppData\\Local\\Google\\Chrome\\User Data",
+            "runtimeArgs": [
+                "--remote-debugging-port=9222",
+                "--harmony",
+                "--profile-directory=Profile 1"
+            ]
+        },
+        {
+            "name": "AppCustomizer",
+            "type": "chrome",
+            "request": "launch",
+            "url": "https://m365x725618.sharepoint.com/sites/SPFxWorkshop-Dev?debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&loadSPFX=true&customActions=%7B%22383462fd-7056-4ca0-bddf-4c561c1e7adf%22%3A%7B%22location%22%3A%22ClientSideExtension.ApplicationCustomizer%22%2C%22properties%22%3A%7B%22testMessage%22%3A%22Test+message%22%7D%7D%7D",
+            "webRoot": "${workspaceRoot}",
+            "sourceMaps": true,
+            "sourceMapPathOverrides": {
+                "webpack:///.././src/*": "${webRoot}/src/*",
+                "webpack:///../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../../src/*": "${webRoot}/src/*"
+            },
+            "userDataDir": "C:\\Users\\tachen\\AppData\\Local\\Google\\Chrome\\User Data",
+            "runtimeArgs": [
+                "--remote-debugging-port=9222",
+                "--harmony",
+                "--profile-directory=Profile 1"
+            ]
+        },
+        {
+            "name": "CommandSet",
+            "type": "chrome",
+            "request": "launch",
+            "url": "https://m365x725618.sharepoint.com/sites/SPFxWorkshop-Dev/Shared%20Documents/Forms/AllItems.aspx?debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&loadSPFX=true&customActions=%7B%22f92f1be5-7a5a-4998-a5e3-1017223e24ab%22%3A%7B%22location%22%3A%22ClientSideExtension.ListViewCommandSet%22%2C%22properties%22%3A%7B%22sampleTextOne%22%3A%22One+item+is+selected+in+the+list%22%2C%22sampleTextTwo%22%3A%22This+command+is+always+visible.%22%7D%7D%7D",
+            "webRoot": "${workspaceRoot}",
+            "sourceMaps": true,
+            "sourceMapPathOverrides": {
+                "webpack:///.././src/*": "${webRoot}/src/*",
+                "webpack:///../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../../src/*": "${webRoot}/src/*"
+            },
+            "userDataDir": "C:\\Users\\tachen\\AppData\\Local\\Google\\Chrome\\User Data",
+            "runtimeArgs": [
+                "--remote-debugging-port=9222",
+                "--harmony"
+            ]
+        },
+        {
+            "name": "FieldCustomizer",
+            "type": "chrome",
+            "request": "launch",
+            "url": "https://m365x725618.sharepoint.com/sites/SPFxWorkshop-Dev/Lists/OrderList/AllItems.aspx?debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&loadSPFX=true&fieldCustomizers=%7B%22Percent%22%3A%7B%22id%22%3A%221df22a1f-43ac-4dc8-90c0-1ffaf0180586%22%2C%22properties%22%3A%7B%22sampleText%22%3A%22Value%22%7D%7D%7D",
+            "webRoot": "${workspaceRoot}",
+            "sourceMaps": true,
+            "sourceMapPathOverrides": {
+                "webpack:///.././src/*": "${webRoot}/src/*",
+                "webpack:///../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../../src/*": "${webRoot}/src/*"
+            },
+            "userDataDir": "C:\\Users\\tachen\\AppData\\Local\\Google\\Chrome\\User Data",
+            "runtimeArgs": [
+                "--remote-debugging-port=9222",
+                "--harmony"
+            ]
+        }
+    ]
 }
