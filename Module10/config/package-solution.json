@@ -1,32 +1,32 @@
 {
-    "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
-    "solution": {
-        "name": "Module10Demo",
-        "id": "bb9b8a24-155c-4ad1-bd0b-a85752ccda0f",
-        "version": "1.0.0.9",
-        "includeClientSideAssets": true,
-        "skipFeatureDeployment": false,
-        "isDomainIsolated": false
-    },
-    "developer": {
-        "name": "",
-        "websiteUrl": "",
-        "privacyUrl": "",
-        "termsOfUseUrl": "",
-        "mpnId": "Module10Demo"
-    },
-    "metadata": {
-        "shortDescription": {
-            "default": "Module10Demo description"
-        },
-        "longDescription": {
-            "default": "Module10Demo description"
-        },
-        "screenshotPaths": [],
-        "videoUrl": "",
-        "categories": []
-    },
-    "paths": {
-        "zippedPackage": "solution/module-10-demo.sppkg"
-    }
+	"$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+	"solution": {
+		"name": "Module10Demo",
+		"id": "bb9b8a24-155c-4ad1-bd0b-a85752ccda0f",
+		"version": "1.0.0.5",
+		"includeClientSideAssets": true,
+		"skipFeatureDeployment": false,
+		"isDomainIsolated": false,
+		"developer": {
+			"name": "",
+			"websiteUrl": "",
+			"privacyUrl": "",
+			"termsOfUseUrl": "",
+			"mpnId": "Module10Demo"
+		},
+		"metadata": {
+			"shortDescription": {
+				"default": "Module10Demo description"
+			},
+			"longDescription": {
+				"default": "Module10Demo description"
+			},
+			"screenshotPaths": [],
+			"videoUrl": "",
+			"categories": []
+		}
+	},
+	"paths": {
+		"zippedPackage": "solution/module-10-demo.sppkg"
+	}
 }
