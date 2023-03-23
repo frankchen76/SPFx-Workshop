@@ -6,7 +6,25 @@
     "version": "1.0.0.0",
     "includeClientSideAssets": false,
     "skipFeatureDeployment": false,
-    "isDomainIsolated": false
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-module-11-demo"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "module-11-demo description"
+      },
+      "longDescription": {
+        "default": "module-11-demo description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    }
   },
   "paths": {
     "zippedPackage": "solution/module-11-demo-1.sppkg"
