@@ -1,52 +1,52 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
-  "port": 4321,
-  "https": true,
-  "serveConfigurations": {
-    "default": {
-      "pageUrl": "https://m365x725618.sharepoint.com/sites/SPFxWorkshop-Dev",
-      "customActions": {
-        "383462fd-7056-4ca0-bddf-4c561c1e7adf": {
-          "location": "ClientSideExtension.ApplicationCustomizer",
-          "properties": {
-            "testMessage": "Test message"
-          }
+    "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+    "port": 4321,
+    "https": true,
+    "serveConfigurations": {
+        "default": {
+            "pageUrl": "https://mngenv626552.sharepoint.com/sites/SPFx-Dev",
+            "customActions": {
+                "383462fd-7056-4ca0-bddf-4c561c1e7adf": {
+                    "location": "ClientSideExtension.ApplicationCustomizer",
+                    "properties": {
+                        "testMessage": "Test message"
+                    }
+                }
+            }
+        },
+        "module05AppCustomizer": {
+            "pageUrl": "https://mngenv626552.sharepoint.com/sites/SPFx-Dev",
+            "customActions": {
+                "383462fd-7056-4ca0-bddf-4c561c1e7adf": {
+                    "location": "ClientSideExtension.ApplicationCustomizer",
+                    "properties": {
+                        "testMessage": "Test message"
+                    }
+                }
+            }
+        },
+        "module05CommandSet": {
+            "pageUrl": "https://mngenv626552.sharepoint.com/sites/SPFx-Dev/Shared%20Documents/Forms/AllItems.aspx",
+            "customActions": {
+                "f92f1be5-7a5a-4998-a5e3-1017223e24ab": {
+                    "location": "ClientSideExtension.ListViewCommandSet",
+                    "properties": {
+                        "sampleTextOne": "One item is selected in the list",
+                        "sampleTextTwo": "This command is always visible."
+                    }
+                }
+            }
+        },
+        "module05FieldCustomizer": {
+            "pageUrl": "https://mngenv626552.sharepoint.com/sites/SPFx-Dev/Lists/OrderList/AllItems.aspx",
+            "fieldCustomizers": {
+                "Percent": {
+                    "id": "1df22a1f-43ac-4dc8-90c0-1ffaf0180586",
+                    "properties": {
+                        "sampleText": "Value"
+                    }
+                }
+            }
         }
-      }
-    },
-    "module05AppCustomizer": {
-      "pageUrl": "https://m365x725618.sharepoint.com/sites/SPFxWorkshop-Dev",
-      "customActions": {
-        "383462fd-7056-4ca0-bddf-4c561c1e7adf": {
-          "location": "ClientSideExtension.ApplicationCustomizer",
-          "properties": {
-            "testMessage": "Test message"
-          }
-        }
-      }
-    },
-    "module05CommandSet": {
-      "pageUrl": "https://m365x725618.sharepoint.com/sites/SPFxWorkshop-Dev/Shared%20Documents/Forms/AllItems.aspx",
-      "customActions": {
-        "f92f1be5-7a5a-4998-a5e3-1017223e24ab": {
-          "location": "ClientSideExtension.ListViewCommandSet",
-          "properties": {
-            "sampleTextOne": "One item is selected in the list",
-            "sampleTextTwo": "This command is always visible."
-          }
-        }
-      }
-    },
-    "module05FieldCustomizer": {
-      "pageUrl": "https://m365x725618.sharepoint.com/sites/SPFxWorkshop-Dev/Lists/OrderList/AllItems.aspx",
-      "fieldCustomizers": {
-        "Percent": {
-          "id": "1df22a1f-43ac-4dc8-90c0-1ffaf0180586",
-          "properties": {
-            "sampleText": "Value"
-          }
-        }
-      }
     }
-  }
 }

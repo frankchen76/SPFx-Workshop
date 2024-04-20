@@ -25,3 +25,10 @@ gulp test - TODO
 gulp serve - TODO
 gulp bundle - TODO
 gulp package-solution - TODO
+
+### troubleshooting
+If the application customizer cannot be loaded because "TypeError: Cannot read properties of undefined (reading 'id')", make sure your react and react-dom versions are exact 17.0.1 via running the following command: 
+```
+npm install react@17.0.1 react-dom@17.0.1 @types/react@17.0.45 @types/react-dom@17.0.17 --save-exact
+npm install react@17.0.1 react-dom@17.0.1 @types/react@17.0.45 @types/react-dom@17.0.17 --save-exact
+```

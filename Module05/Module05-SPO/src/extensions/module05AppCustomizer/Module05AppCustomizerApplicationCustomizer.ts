@@ -19,8 +19,8 @@ const LOG_SOURCE: string = 'Module05AppCustomizerApplicationCustomizer';
 export interface IModule05AppCustomizerApplicationCustomizerProperties {
     // This is an example; replace with your own property
     testMessage: string;
-    Top: string;
-    Bottom: string;
+    // Top: string;
+    // Bottom: string;
 }
 
 /** A Custom Action which can be run during execution of a Client Side Application */
@@ -30,12 +30,13 @@ export default class Module05AppCustomizerApplicationCustomizer
     private _bottomPlaceholder: PlaceholderContent | undefined;
 
     public onInit(): Promise<void> {
-        Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
+        console.log("HelloWorldApplicationCustomizer.onInit()");
+        // Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
 
-        let message: string = this.properties.testMessage;
-        if (!message) {
-            message = '(No properties were provided.)';
-        }
+        // let message: string = this.properties.testMessage;
+        // if (!message) {
+        //     message = '(No properties were provided.)';
+        // }
 
         //Dialog.alert(`Hello from ${strings.Title}:\n\n${message}`);
         this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceHolders);
@@ -92,7 +93,6 @@ export default class Module05AppCustomizerApplicationCustomizer
                     text: "(Bottom property)"
                 }
             );
-            window
             ReactDom.render(element, this._bottomPlaceholder.domElement);// as React.Component<IHeaderProps, React.ComponentState, any>;
 
         } else {
